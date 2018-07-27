@@ -1,0 +1,35 @@
+ext {
+    architectureVersion = '1.1.1'
+    archPagingVersions = '1.0.0'
+    constraintLayoutVersion='1.1.0'
+    moshiVersion = '2.0.0'
+    okHttpVersion = '3.8.1'
+    picassoVersion = '2.5.2'
+    retrofitVersion = '2.3.0'
+    supportVersion = '27.1.1'
+}
+
+buildscript {
+    ext.kotlinVersion = '1.2.41'
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.0-beta01'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

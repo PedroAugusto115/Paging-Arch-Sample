@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'org.jetbrains.kotlin.android.extensions'
+apply plugin: 'org.jetbrains.kotlin.kapt'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        applicationId "com.pedropereira.paginggithubsample"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    androidExtensions{
+        experimental = true
+    }
+}
+
+dependencies {
+    // Architecture
+    kapt "android.arch.lifecycle:compiler:${architectureVersion}"
+    implementation "android.arch.lifecycle:runtime:${architectureVersion}"
+    implementation "android.arch.lifecycle:extensions:${architectureVersion}"
+    implementation "android.arch.paging:runtime:${archPagingVersions}"
+
+    // Support libs
+    implementation "com.android.support:appcompat-v7:${supportVersion}"
+    implementation "com.android.support:recyclerview-v7:${supportVersion}"
+    implementation "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}"
+
+    // Network
+    implementation "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}"
+    implementation "com.squareup.picasso:picasso:${picassoVersion}"
+    implementation "com.squareup.retrofit2:converter-moshi:${moshiVersion}"
+    implementation "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}"
+}

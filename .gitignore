@@ -1,0 +1,19 @@
+# Generated folders
+/.idea
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/build
+/captures
+/app/build
+/.gradle
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Generated files
+.externalNativeBuild
+.DS_Store
+
+# configuration files extension
+*.iml
